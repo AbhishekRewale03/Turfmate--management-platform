@@ -803,6 +803,8 @@ I am sending the payment screenshot here for verification.`,
               </Button>
             </a>
 
+            <br />
+
             <Button
               disabled={busy || remaining <= 0}
               onClick={claim}
@@ -814,6 +816,8 @@ I am sending the payment screenshot here for verification.`,
                   ? "Payment time expired"
                   : "I've paid and sent the screenshot — please verify"}
             </Button>
+
+            <br />
 
             <p className="text-xs text-muted-foreground">
               Only submit after the payment is complete and its screenshot has
@@ -828,14 +832,10 @@ I am sending the payment screenshot here for verification.`,
             <p className="font-bold">PAYMENT SUBMITTED</p>
 
             <p className="mt-1 text-sm text-muted-foreground">
-              Awaiting turf owner verification. The slot remains locked.
+              After payment verification the booking will confirmed. The slot remains locked.
             </p>
 
-            <a href={whatsapp} target="_blank" rel="noreferrer">
-              <Button className="mt-4 w-full">
-                Send Screenshot on WhatsApp
-              </Button>
-            </a>
+            
           </div>
         )}
 
