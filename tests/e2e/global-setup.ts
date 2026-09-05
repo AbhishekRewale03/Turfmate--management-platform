@@ -24,6 +24,7 @@ export default async function globalSetup(){
  await seedTenant(db,'tenant-a','arena-11','Arena 11')
  await seedTenant(db,'tenant-b','arena-22','Arena 22')
  await seedTenant(db,'tenant-c','arena-upi','Arena UPI','MANUAL_UPI')
+ await seedTenant(db,'tenant-vitawa','vitawa','Vitawa Sports Turf')
  const ownerA=await auth.createUser({email:'owner-a@example.com',password:'Password123!',emailVerified:true}),ownerB=await auth.createUser({email:'owner-b@example.com',password:'Password123!',emailVerified:true}),ownerC=await auth.createUser({email:'owner-c@example.com',password:'Password123!',emailVerified:true}),disabledOwner=await auth.createUser({email:'disabled-owner@example.com',password:'Password123!',emailVerified:true});await auth.createUser({email:'new-owner@example.com',password:'Password123!',emailVerified:true});await auth.createUser({email:'duplicate-owner@example.com',password:'Password123!',emailVerified:true});await auth.createUser({email:'unverified-owner@example.com',password:'Password123!',emailVerified:false})
  await Promise.all([
   db.doc(`users/${ownerA.uid}`).set({email:ownerA.email,tenantIds:['tenant-a'],createdAt:FieldValue.serverTimestamp(),updatedAt:FieldValue.serverTimestamp()}),
